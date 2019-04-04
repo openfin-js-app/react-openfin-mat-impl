@@ -13,12 +13,14 @@ const useStyles = makeStyles(style);
 interface IProps {
     appLogo:string,
     companyLogo:string,
+    supporterEmail?:string,
 }
 
 const ConfigAboutField:React.FunctionComponent<IProps> = (
     {
         appLogo,
         companyLogo,
+        supporterEmail,
     }
 )=>{
 
@@ -31,7 +33,7 @@ const ConfigAboutField:React.FunctionComponent<IProps> = (
     }
 
     const handleSupportBtnClick = ()=>{
-        window.location.href = "mailto:mail@liwentao90@yahoo.com"
+        window.location.href = `mailto:mail@${supporterEmail?supporterEmail:'liwentao90@yahoo.com'}`
     }
 
     return (<React.Fragment>
