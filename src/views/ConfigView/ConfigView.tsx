@@ -30,7 +30,7 @@ import {useTranslation} from 'react-i18next';
 
 import cx from 'classnames';
 
-import {ConfigField as ConfigFieldComp} from '../../components';
+import ConfigFieldComp from '../../components/ConfigComp/ConfigField';
 
 import {configViewStyle as style} from '../../assets/jss';
 

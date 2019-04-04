@@ -17,28 +17,6 @@ import {useTranslation} from 'react-i18next';
 
 import { configFieldCompStyle as style } from '../../assets/jss';
 
-import NumberFormat from 'react-number-format';
-
-function NumberFormatCustom(props) {
-    const { inputRef, onChange, ...other } = props;
-
-    return (
-        <NumberFormat
-            {...other}
-            getInputRef={inputRef}
-            onValueChange={values => {
-                onChange({
-                    target: {
-                        value: values.value,
-                    },
-                });
-            }}
-            thousandSeparator
-            prefix="$"
-        />
-    );
-}
-
 interface IProps{
     _type:FieldType,
     _label:string,
@@ -107,7 +85,6 @@ const ConfigFieldComp:React.FunctionComponent<IProps> = (
                     value={value}
                     onChange={handleTextFieldFloatChange}
                     id={`config_field_${shortid.generate()}`}
-                    InputProps={{inputComponent:NumberFormatCustom}}
                     margin={"dense"}
                     {..._props}
                 />
