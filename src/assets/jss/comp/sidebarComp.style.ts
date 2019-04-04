@@ -1,36 +1,24 @@
 import { Theme, createStyles } from '@material-ui/core/styles';
 
-import {
-    windowBorder,
-    appbarHeight,
-    drawerWidth,
-    transition,
-    boxShadow,
-    defaultFont,
-    primaryColor,
-    infoColor,
-    successColor,
-    warningColor,
-    dangerColor,
-} from '../openfin-starter-constant';
+import initState from '../openfin-starter-constant';
 
 const sidebarStyle = (theme:Theme) => createStyles({
     drawerPaper:{
         border:"none",
         backgroundColor:'transparent',
         position:"fixed",
-        top: appbarHeight + windowBorder,
+        top: initState.appbarHeight + initState.windowBorder,
         bottom:0,
         left:"0",
         zIndex: 1,
-        ...boxShadow,
-        width:drawerWidth,
+        ...initState.boxShadow,
+        width:initState.drawerWidth,
         height:"100%",
     },
     background:{
         position:"absolute",
         zIndex:1,
-        height: `calc(100vh - ${appbarHeight}px)`,
+        height: `calc(100vh - ${initState.appbarHeight}px)`,
         width: "100%",
         display:"block",
         top:"0",
@@ -70,7 +58,7 @@ const sidebarStyle = (theme:Theme) => createStyles({
         display:"block",
         padding:"2px 15px",
         backgroundColor:"transparent",
-        ...defaultFont,
+        ...initState.defaultFont,
     },
     itemIcon:{
         width:24,
@@ -83,7 +71,7 @@ const sidebarStyle = (theme:Theme) => createStyles({
         color:"rgba(255,255,255,0.8)",
     },
     itemText:{
-        ...defaultFont,
+        ...initState.defaultFont,
         margin:"0",
         lineHeight:"30px",
         fontSize:"14px",
@@ -97,56 +85,56 @@ const sidebarStyle = (theme:Theme) => createStyles({
         padding:"2% 5%",
     },
     primary:{
-        backgroundColor:primaryColor,
+        backgroundColor:initState.primaryColor,
         "&:hover":{
-            backgroundColor:primaryColor,
+            backgroundColor:initState.primaryColor,
         }
     },
     blue: {
-        backgroundColor: infoColor,
+        backgroundColor: initState.infoColor,
         boxShadow:
             "0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)",
         "&:hover": {
-            backgroundColor: infoColor,
+            backgroundColor: initState.infoColor,
             boxShadow:
                 "0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)"
         }
     },
     green: {
-        backgroundColor: successColor,
+        backgroundColor: initState.successColor,
         boxShadow:
             "0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)",
         "&:hover": {
-            backgroundColor: successColor,
+            backgroundColor: initState.successColor,
             boxShadow:
                 "0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)"
         }
     },
     orange: {
-        backgroundColor: warningColor,
+        backgroundColor: initState.warningColor,
         boxShadow:
             "0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)",
         "&:hover": {
-            backgroundColor: warningColor,
+            backgroundColor: initState.warningColor,
             boxShadow:
                 "0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)"
         }
     },
     red: {
-        backgroundColor: dangerColor,
+        backgroundColor: initState.dangerColor,
         boxShadow:
             "0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)",
         "&:hover": {
-            backgroundColor: dangerColor,
+            backgroundColor: initState.dangerColor,
             boxShadow:
                 "0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)"
         }
     },
     sidebarWrapper: {
         position: "relative",
-        height: `calc(100vh - ${appbarHeight+windowBorder+30}px)`,
+        height: `calc(100vh - ${initState.appbarHeight+initState.windowBorder+30}px)`,
         overflow: "auto",
-        width: drawerWidth,
+        width: initState.drawerWidth,
         zIndex: 4,
         overflowScrolling: "touch"
     },

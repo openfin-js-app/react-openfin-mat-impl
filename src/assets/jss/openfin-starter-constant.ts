@@ -1,3 +1,5 @@
+import {CSSProperties} from "@material-ui/core/styles/withStyles";
+
 const drawerWidth = 260;
 
 const appbarHeight = 20;
@@ -33,8 +35,28 @@ const infoColor = "#00acc1";
 const roseColor = "#e91e63";
 const greyColor = "#999999";
 
+export interface IOpenfinMatImplStyleConstant{
+    drawerWidth : number,
+    appbarHeight : number,
+    windowBorder : number,
+    transition : {
+        transition : string,
+    },
+    container : CSSProperties,
+    boxShadow : {
+        boxShadow : string,
+    },
+    defaultFont: CSSProperties,
+    primaryColor :string,
+    warningColor :string,
+    dangerColor :string,
+    successColor :string,
+    infoColor :string,
+    roseColor :string,
+    greyColor :string,
+}
 
-export {
+const initState:IOpenfinMatImplStyleConstant = {
     // variables
     drawerWidth,
     appbarHeight,
@@ -51,3 +73,13 @@ export {
     roseColor,
     greyColor,
 };
+
+export const initializeState = (state:Partial<IOpenfinMatImplStyleConstant>)=>{
+    Object.keys(initState).forEach( key => {
+        if (state[key]){
+            initState[key] = this.state[key]
+        }
+    })
+}
+
+export default initState;

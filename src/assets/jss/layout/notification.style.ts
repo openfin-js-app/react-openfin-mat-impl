@@ -1,5 +1,5 @@
 import { Theme, createStyles } from '@material-ui/core/styles';
-import {windowBorder} from "../openfin-starter-constant";
+import initState from "../openfin-starter-constant";
 
 const notificationStyle = (theme:Theme)=> createStyles({
 
@@ -9,10 +9,10 @@ const notificationStyle = (theme:Theme)=> createStyles({
         color: theme.palette.text.primary,
         backgroundColor: theme.palette.background.default,
         position:'relative',
-        boxShadow:`inset 0 0 ${windowBorder*2}px #ffffff`,
+        boxShadow:`inset 0 0 ${initState.windowBorder*2}px #ffffff`,
     },
     lightBoxShaddow:{
-        boxShadow:`inset 0 0 ${windowBorder*2}px #000000`,
+        boxShadow:`inset 0 0 ${initState.windowBorder*2}px #000000`,
     },
     closeBtn:{
         position:'absolute',

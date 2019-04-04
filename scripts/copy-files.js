@@ -87,7 +87,7 @@ async function addLicense(packageData){
 async function run(){
     await Promise.all(
         ['./README.md','./CHANGELOG.md','./LICENSE.md'].map(file => copyFile(file)),
-        handleSvgFiles(path.resolve(__dirname, '../src'),path.resolve(__dirname, '../build'))
+        // handleSvgFiles(path.resolve(__dirname, '../src'),path.resolve(__dirname, '../build'))
     );
     const packageData = await createPackageFile();
     await addLicense(packageData);

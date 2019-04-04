@@ -3,9 +3,7 @@ import { Theme, createStyles } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
 import amber from '@material-ui/core/colors/amber';
 
-import {
-    primaryColor, warningColor, dangerColor, successColor, infoColor, roseColor
-} from '../openfin-starter-constant';
+import initState from '../openfin-starter-constant';
 
 const snackbarContent = (theme:Theme) => createStyles({
     outmostContent:{
@@ -14,7 +12,7 @@ const snackbarContent = (theme:Theme) => createStyles({
         borderRadius: 4,
     },
     primary:{
-        backgroundColor:primaryColor,
+        backgroundColor:initState.primaryColor,
     },
     success:{
         backgroundColor:green[600],
@@ -23,13 +21,13 @@ const snackbarContent = (theme:Theme) => createStyles({
         backgroundColor:theme.palette.error.dark,
     },
     info:{
-        backgroundColor:infoColor,
+        backgroundColor:initState.infoColor,
     },
     warning:{
         backgroundColor:amber[700],
     },
     rose:{
-        backgroundColor:roseColor,
+        backgroundColor:initState.roseColor,
     },
     icon:{
         fontSize:20,

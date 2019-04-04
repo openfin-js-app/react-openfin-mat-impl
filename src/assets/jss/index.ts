@@ -15,7 +15,6 @@ export {default as snackbarContentCompStyle} from './comp/snackbarContentComp.st
 // BEGIN_OF_AL_CLI_VIEW
 export {default as reportViewStyle} from './view/reportView.style';
 export {default as configViewStyle} from './view/configView.style';
-export {default as sampleNotificationViewStyle } from './view/sampleNotificationView.style';
 // END_OF_AL_CLI_VIEW
 
 // BEGIN_OF_AL_CLI_LYT

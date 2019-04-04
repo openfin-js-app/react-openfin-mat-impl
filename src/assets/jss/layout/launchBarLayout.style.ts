@@ -1,10 +1,7 @@
 import { Theme, createStyles } from '@material-ui/core/styles';
 import { lighten, darken } from '@material-ui/core/styles/colorManipulator';
 
-import {
-    primaryColor, warningColor, successColor, infoColor, roseColor,
-    greyColor, dangerColor,
-} from '../openfin-starter-constant';
+import initState from '../openfin-starter-constant';
 
 const launchBtnHeight = 64;
 const launchBtnContainerMaxWidth = 576;
@@ -30,7 +27,7 @@ const launchBarStyle:any = (theme:Theme) => createStyles({
         maxWidth:`${launchBtnContainerMaxWidth}px`,
         whiteSpace:'nowrap',
         height:`${launchBtnHeight}px`,
-        background: darken(primaryColor, 0.2),
+        background: darken(initState.primaryColor, 0.2),
     },
     buttonContainerCollapse:{
         width:'0px !important',
@@ -41,7 +38,7 @@ const launchBarStyle:any = (theme:Theme) => createStyles({
         height:launchBtnHeight,
         width:launchBtnHeight,
         "&:hover":{
-            background: darken(primaryColor, 0.4),
+            background: darken(initState.primaryColor, 0.4),
         },
         '& $svg':{
             fontSize:'50px',
@@ -52,7 +49,7 @@ const launchBarStyle:any = (theme:Theme) => createStyles({
         height:launchBtnHeight,
         width:launchBtnHeight,
         "&:hover":{
-            background: darken(primaryColor, 0.4),
+            background: darken(initState.primaryColor, 0.4),
         },
         '& $img':{
             height:36,
@@ -76,58 +73,58 @@ const launchBarStyle:any = (theme:Theme) => createStyles({
     },
     controlBtnPrimary:{
         color: '#ffffff',
-        backgroundColor: primaryColor,
+        backgroundColor: initState.primaryColor,
         "&:hover,&:focus":{
-            background:primaryColor,
-            border:`1px solid ${lighten(primaryColor,0.5)}`
+            background:initState.primaryColor,
+            border:`1px solid ${lighten(initState.primaryColor,0.5)}`
         },
     },
     controlBtnWarning:{
         color: '#ffffff',
-        backgroundColor: warningColor,
+        backgroundColor: initState.warningColor,
         "&:hover,&:focus":{
-            background:warningColor,
-            border:`1px solid ${lighten(warningColor,0.5)}`
+            background:initState.warningColor,
+            border:`1px solid ${lighten(initState.warningColor,0.5)}`
         },
     },
     controlBtnSuccess:{
         color: '#ffffff',
-        backgroundColor: successColor,
+        backgroundColor: initState.successColor,
         "&:hover,&:focus":{
-            background:successColor,
-            border:`1px solid ${lighten(successColor,0.5)}`
+            background:initState.successColor,
+            border:`1px solid ${lighten(initState.successColor,0.5)}`
         },
     },
     controlBtnInfo:{
         color: '#ffffff',
-        backgroundColor: infoColor,
+        backgroundColor: initState.infoColor,
         "&:hover,&:focus":{
-            background:infoColor,
-            border:`1px solid ${lighten(infoColor,0.5)}`
+            background:initState.infoColor,
+            border:`1px solid ${lighten(initState.infoColor,0.5)}`
         },
     },
     controlBtnRose:{
         color: '#ffffff',
-        backgroundColor: roseColor,
+        backgroundColor: initState.roseColor,
         "&:hover,&:focus":{
-            background:roseColor,
-            border:`1px solid ${lighten(roseColor,0.5)}`
+            background:initState.roseColor,
+            border:`1px solid ${lighten(initState.roseColor,0.5)}`
         },
     },
     controlBtnGrey:{
         color: '#ffffff',
-        backgroundColor: greyColor,
+        backgroundColor: initState.greyColor,
         "&:hover,&:focus":{
-            background:greyColor,
-            border:`1px solid ${lighten(greyColor,0.5)}`
+            background:initState.greyColor,
+            border:`1px solid ${lighten(initState.greyColor,0.5)}`
         },
     },
     controlBtnDanger:{
         color: '#ffffff',
-        backgroundColor: dangerColor,
+        backgroundColor: initState.dangerColor,
         "&:hover,&:focus":{
-            background:dangerColor,
-            border:`1px solid ${lighten(dangerColor,0.5)}`
+            background:initState.dangerColor,
+            border:`1px solid ${lighten(initState.dangerColor,0.5)}`
         },
     },
 });

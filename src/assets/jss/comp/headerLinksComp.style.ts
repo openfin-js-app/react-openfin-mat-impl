@@ -1,72 +1,63 @@
 import { Theme, createStyles } from '@material-ui/core/styles';
 import { lighten, darken } from '@material-ui/core/styles/colorManipulator';
 
-import {
-    appbarHeight,
-    defaultFont,
-    dangerColor,
-    primaryColor,
-    infoColor,
-    successColor,
-    warningColor,
-    roseColor,
-} from '../openfin-starter-constant';
+import initState from '../openfin-starter-constant';
 
 const headerLinkStyle = (theme:Theme) => createStyles({
     menuBtn:{
-        width:appbarHeight * 0.9,
-        height:appbarHeight * 0.9,
-        minHeight:appbarHeight * 0.9,
-        marginRight: appbarHeight * 0.5,
+        width:initState.appbarHeight * 0.9,
+        height:initState.appbarHeight * 0.9,
+        minHeight:initState.appbarHeight * 0.9,
+        marginRight: initState.appbarHeight * 0.5,
         "-webkit-app-region":"no-drag",
         "& span svg":{
-            width:appbarHeight * 0.8,
-            height:appbarHeight * 0.8,
+            width:initState.appbarHeight * 0.8,
+            height:initState.appbarHeight * 0.8,
         }
     },
     info:{
-        backgroundColor: infoColor,
+        backgroundColor: initState.infoColor,
         color: '#ffffff',
         borderRadius:"4px",
         "&:hover,&:focus":{
-            background:infoColor,
-            border:`1px solid ${lighten(infoColor,0.5)}`
+            background:initState.infoColor,
+            border:`1px solid ${lighten(initState.infoColor,0.5)}`
         },
     },
     success:{
-        backgroundColor: successColor,
+        backgroundColor: initState.successColor,
         color: '#ffffff',
         borderRadius:"4px",
         "&:hover,&:focus":{
-            background:successColor,
-            border:`1px solid ${lighten(successColor,0.5)}`
+            background:initState.successColor,
+            border:`1px solid ${lighten(initState.successColor,0.5)}`
         },
     },
     warning:{
-        backgroundColor: warningColor,
+        backgroundColor: initState.warningColor,
         color: '#ffffff',
         borderRadius:"4px",
         "&:hover,&:focus":{
-            background:warningColor,
-            border:`1px solid ${lighten(warningColor,0.5)}`
+            background:initState.warningColor,
+            border:`1px solid ${lighten(initState.warningColor,0.5)}`
         },
     },
     rose:{
-        backgroundColor: roseColor,
+        backgroundColor: initState.roseColor,
         color: '#ffffff',
         borderRadius:"4px",
         "&:hover,&:focus":{
-            background:roseColor,
-            border:`1px solid ${lighten(roseColor,0.5)}`
+            background:initState.roseColor,
+            border:`1px solid ${lighten(initState.roseColor,0.5)}`
         },
     },
     danger:{
-        backgroundColor: dangerColor,
+        backgroundColor: initState.dangerColor,
         color: '#ffffff',
         borderRadius:"4px",
         "&:hover,&:focus":{
-            background:dangerColor,
-            border:`1px solid ${lighten(dangerColor,0.5)}`
+            background:initState.dangerColor,
+            border:`1px solid ${lighten(initState.dangerColor,0.5)}`
         },
     },
 });

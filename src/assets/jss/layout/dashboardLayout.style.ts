@@ -1,10 +1,6 @@
 import { Theme, createStyles } from '@material-ui/core/styles';
 
-import {
-    windowBorder,
-    primaryColor, infoColor, warningColor, dangerColor, successColor,
-    drawerWidth, appbarHeight,
-} from '../openfin-starter-constant';
+import initState from '../openfin-starter-constant';
 
 const appStyle:any = (theme:Theme) => createStyles({
     wrapper:{
@@ -15,19 +11,19 @@ const appStyle:any = (theme:Theme) => createStyles({
         backgroundColor: theme.palette.background.default,
     },
     wrapperPrimary:{
-        borderTop: `${windowBorder}px solid ${primaryColor}`,
+        borderTop: `${initState.windowBorder}px solid ${initState.primaryColor}`,
     },
     wrapperInfo:{
-        borderTop: `${windowBorder}px solid ${infoColor}`,
+        borderTop: `${initState.windowBorder}px solid ${initState.infoColor}`,
     },
     wrapperWarning:{
-        borderTop: `${windowBorder}px solid ${warningColor}`,
+        borderTop: `${initState.windowBorder}px solid ${initState.warningColor}`,
     },
     wrapperDanger:{
-        borderTop: `${windowBorder}px solid ${dangerColor}`,
+        borderTop: `${initState.windowBorder}px solid ${initState.dangerColor}`,
     },
     wrapperSuccess:{
-        borderTop: `${windowBorder}px solid ${successColor}`,
+        borderTop: `${initState.windowBorder}px solid ${initState.successColor}`,
     },
 
     mainPanel:{
@@ -35,7 +31,7 @@ const appStyle:any = (theme:Theme) => createStyles({
         position:"relative",
         float:"right",
         height:"100%",
-        width:`calc(100% - ${drawerWidth}px)`,
+        width:`calc(100% - ${initState.drawerWidth}px)`,
         overflowScrolling:'touch',
     },
     mainPanelShift:{
@@ -48,17 +44,17 @@ const appStyle:any = (theme:Theme) => createStyles({
     content:{
         position:'relative',
         marginTop:"0px",
-        padding:`0px ${windowBorder}px`,
+        padding:`0px ${initState.windowBorder}px`,
         height:"100%",
         overflowX:'hidden',
-        boxShadow:`inset 0 0 ${windowBorder}px #ffffff`,
+        boxShadow:`inset 0 0 ${initState.windowBorder}px #ffffff`,
     },
     lightBoxShaddow:{
-        boxShadow:`inset 0 0 ${windowBorder}px #000000`,
+        boxShadow:`inset 0 0 ${initState.windowBorder}px #000000`,
     },
     container:{
         position:'absolute',
-        top:appbarHeight,
+        top:initState.appbarHeight,
         left:"0px",
         right:"0px",
         bottom:"0px",
