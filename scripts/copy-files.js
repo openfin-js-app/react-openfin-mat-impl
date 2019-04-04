@@ -1,6 +1,43 @@
+var fs = require('fs');
 var path = require('path');
 var fse = require('fs-extra');
-// var glob = require('glob');
+var glob = require('glob');
+var chalk = require("chalk");
+var shell = require("shelljs");
+
+
+function handleSvgFiles(from, to) {
+    const files = glob.sync('**/assets/svg/**',{cwd:from});
+    const cmds = files
+        .filter(file => fs.statSync(path.resolve(from, file)).isFile())
+        .map(file =>
+            new Promise((resolve,reject)=>{
+
+                    const src = path.resolve(from, file);
+                    const dest = path.resolve(to, file);
+
+                    // console.log(chalk.blue(`mkdir -p ${path.dirname(dest)}`));
+                    shell.mkdir('-p',path.dirname(dest));
+
+                    let readStream = fs.createReadStream(src).pipe(
+                        fs.createWriteStream(dest)
+                    );
+
+                    readStream.once('error', (err) => {
+                        console.log(chalk.red(`failed to copy ${src} -> ${dest}`));
+                        reject(err);
+                    });
+
+                    readStream.once('end', () => {
+                        resolve();
+                    });
+
+                }
+            )
+        );
+    return Promise.all(cmds);
+}
+
 
 async function copyFile(file){
     const buildPath = path.resolve(__dirname,'../build/',path.basename(file));
@@ -10,7 +47,7 @@ async function copyFile(file){
 
 async function createPackageFile() {
     const packageData = await fse.readFile(path.resolve(__dirname,'../package.json'),'utf-8');
-    const {nyc, scripts, devDependencies, workspaces, ...packageDataOther} = JSON.parse(packageData);
+    const { scripts, devDependencies, workspaces, jest, ...packageDataOther} = JSON.parse(packageData);
 
     const newPackageData = {
         ...packageDataOther,
@@ -50,6 +87,7 @@ async function addLicense(packageData){
 async function run(){
     await Promise.all(
         ['./README.md','./CHANGELOG.md','./LICENSE.md'].map(file => copyFile(file)),
+        handleSvgFiles(path.resolve(__dirname, '../src'),path.resolve(__dirname, '../build'))
     );
     const packageData = await createPackageFile();
     await addLicense(packageData);
