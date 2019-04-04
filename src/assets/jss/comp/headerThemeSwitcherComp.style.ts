@@ -13,7 +13,7 @@ const headerThemeSwitcherCompStyle = (theme:Theme)=> createStyles({
         width: switcherWidth,
         height: switcherHeight,
         backgroundSize:`${switcherWidth*2}px ${switcherHeight}px`,
-        backgroundImage:`url(${process.env.PUBLIC_URL}/img/switcher.png)`,
+        backgroundImage:`url(/img/switcher.png)`,
         "-webkit-app-region":"no-drag",
     },
 
