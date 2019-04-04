@@ -5,7 +5,7 @@ import amber from '@material-ui/core/colors/amber';
 
 import {
     primaryColor, warningColor, dangerColor, successColor, infoColor, roseColor
-} from '../../openfin-starter-constant';
+} from '../openfin-starter-constant';
 
 const snackbarContent = (theme:Theme) => createStyles({
     outmostContent:{

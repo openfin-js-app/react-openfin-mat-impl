@@ -12,7 +12,7 @@ import {
     successColor,
     warningColor,
     dangerColor,
-} from '../../openfin-starter-constant';
+} from '../openfin-starter-constant';
 
 const sidebarStyle = (theme:Theme) => createStyles({
     drawerPaper:{

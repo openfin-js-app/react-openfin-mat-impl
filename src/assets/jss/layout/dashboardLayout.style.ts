@@ -4,7 +4,7 @@ import {
     windowBorder,
     primaryColor, infoColor, warningColor, dangerColor, successColor,
     drawerWidth, appbarHeight,
-} from '../../openfin-starter-constant';
+} from '../openfin-starter-constant';
 
 const appStyle:any = (theme:Theme) => createStyles({
     wrapper:{

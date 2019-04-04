@@ -1,6 +1,6 @@
 import { Theme, createStyles } from '@material-ui/core/styles';
 
-import { appbarHeight, windowBorder } from '../../openfin-starter-constant'
+import { appbarHeight, windowBorder } from '../openfin-starter-constant'
 
 const switcherWidth = 14/34*appbarHeight;
 const switcherHeight = appbarHeight;

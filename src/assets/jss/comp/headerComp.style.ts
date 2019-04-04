@@ -10,7 +10,7 @@ import {
     successColor,
     warningColor,
     dangerColor,
-} from '../../openfin-starter-constant';
+} from '../openfin-starter-constant';
 
 const headerStyle = (theme:Theme) =>createStyles({
     appBar:{

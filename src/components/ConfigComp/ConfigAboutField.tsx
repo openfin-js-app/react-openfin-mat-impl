@@ -7,13 +7,19 @@ import Typography from '@material-ui/core/Typography';
 import { useTranslation } from 'react-i18next';
 
 import { configAboutFieldStyle as style } from '../../assets/jss';
-import appLogo from '../../assets/svg/app.svg';
-import companyLogo from '../../assets/svg/company.svg';
 
 const useStyles = makeStyles(style);
 
-const ConfigAboutField:React.FunctionComponent<{}> = (
-    {}
+interface IProps {
+    appLogo:string,
+    companyLogo:string,
+}
+
+const ConfigAboutField:React.FunctionComponent<IProps> = (
+    {
+        appLogo,
+        companyLogo,
+    }
 )=>{
 
     const classes = useStyles();

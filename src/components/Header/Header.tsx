@@ -20,9 +20,8 @@ import {MouseEventHandler} from "react";
 import { headerCompStyle as style } from '../../assets/jss';
 import {RouteItem} from '../../routes';
 
-import appLogo from '../../../assets/svg/app.svg';
-
 interface IProps{
+    appLogo:string,
     routes:RouteItem[],
     color:string,
     open?:boolean,
@@ -58,6 +57,7 @@ const HeaderComp:React.FunctionComponent<IProps> = (
     const classes = useStyles();
 
     const {
+            appLogo,
             color, windowsState,
             handleDrawerToggle, docked,
             onSwitchToLaunchBar, onUndock, onMinimize, onMaximize, onClose,

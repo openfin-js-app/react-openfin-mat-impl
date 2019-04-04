@@ -4,7 +4,7 @@ import { lighten, darken } from '@material-ui/core/styles/colorManipulator';
 import {
     primaryColor, warningColor, successColor, infoColor, roseColor,
     greyColor, dangerColor,
-} from '../../openfin-starter-constant';
+} from '../openfin-starter-constant';
 
 const launchBtnHeight = 64;
 const launchBtnContainerMaxWidth = 576;

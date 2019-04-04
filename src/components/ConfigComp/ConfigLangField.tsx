@@ -15,8 +15,8 @@ import cx from "classnames";
 
 import { configLangFieldCompStyle as style } from '../../assets/jss';
 
-import usFlag from '../../../assets/svg/nationals/united-states.svg';
-import chFlag from '../../../assets/svg/nationals/china.svg';
+const usFlag = require('../../../assets/svg/nationals/united-states.svg') as string;
+const chFlag = require('../../../assets/svg/nationals/china.svg') as string;
 
 const useStyles = makeStyles(style);
 

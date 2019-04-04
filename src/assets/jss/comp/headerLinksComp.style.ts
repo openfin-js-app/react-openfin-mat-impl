@@ -10,7 +10,7 @@ import {
     successColor,
     warningColor,
     roseColor,
-} from '../../openfin-starter-constant';
+} from '../openfin-starter-constant';
 
 const headerLinkStyle = (theme:Theme) => createStyles({
     menuBtn:{

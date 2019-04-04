@@ -1,5 +1,5 @@
 import { Theme, createStyles } from '@material-ui/core/styles';
-import {windowBorder} from "../../openfin-starter-constant";
+import {windowBorder} from "../openfin-starter-constant";
 
 const notificationStyle = (theme:Theme)=> createStyles({
 

@@ -8,9 +8,6 @@ import { makeStyles } from '@material-ui/styles';
 import { Theme, createStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-import appLogo from'../../assets/svg/app.svg';
-import companyLogo from'../../assets/svg/company.svg';
-
 const style = (theme:Theme) => createStyles({
     container:{
         position:'relative',
@@ -117,8 +114,18 @@ export const LoadingBarComponent:React.FunctionComponent<{}> = (
 
 }
 
-const LoadingComponent:React.FunctionComponent<{}> = (
-    {}
+interface IProps {
+    appLogo:string,
+    companyLogo:string,
+    version:string,
+}
+
+const LoadingComponent:React.FunctionComponent<IProps> = (
+    {
+        appLogo,
+        companyLogo,
+        version,
+    }
 ) => {
 
     const classes = useStyles();
@@ -135,7 +142,7 @@ const LoadingComponent:React.FunctionComponent<{}> = (
         <div className={classes.container}>
             <img src={appLogo} className={classes.appLogoImg} />
             <div className={classes.appName}>{t('appName')}</div>
-            <div className={classes.versionStr}>{process.env.REACT_APP_VERSION}</div>
+            <div className={classes.versionStr}>{version}</div>
             <LoadingBarComponent/>
             <img src={companyLogo} className={classes.companyLogImg} />
             <div className={classes.statusMsg}>{t(loadingMsg)}</div>

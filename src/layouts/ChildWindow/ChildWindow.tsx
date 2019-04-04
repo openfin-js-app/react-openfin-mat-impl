@@ -12,6 +12,7 @@ import { Header,SnackbarContent } from '../../components';
 import { dashboardLayoutStyle as style } from '../../assets/jss';
 
 interface IProps {
+    appLogo:string,
     routes: RouteItem[],
     // for testing
     location?:any,

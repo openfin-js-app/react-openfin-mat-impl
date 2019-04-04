@@ -22,18 +22,18 @@ import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap';
 
 import { launchBarLayoutStyle as style } from '../../assets/jss';
 
-import appLogo from '../../assets/svg/app.svg';
-
 import { IlaunchBarItemType } from '../../launchBar';
 
 const useStyles = makeStyles(style);
 
 interface IProps {
+    appLogo:string,
     items:IlaunchBarItemType[],
 }
 
 const LaunchBarComp:React.FunctionComponent<IProps> = (
     {
+        appLogo,
         items
     }
 )=>{
