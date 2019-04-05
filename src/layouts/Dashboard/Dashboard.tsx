@@ -16,6 +16,9 @@ import {dashboardLayoutStyle as style} from '../../assets/jss';
 interface IProps {
     appLogo:string,
     routes: RouteItem[],
+    hideSwitchToLaunchbar?:boolean,
+    headerPrefixElements?:React.ReactNode,
+    headerSuffixElements?:React.ReactNode,
     // for testing
     location?:any,
 }
@@ -25,6 +28,9 @@ const useStyles = makeStyles(style);
 const DashbardLayout:React.FunctionComponent<IProps> = (
     {
         routes,
+        hideSwitchToLaunchbar,
+        headerPrefixElements,
+        headerSuffixElements,
         ...rest
     }
 )=>{
@@ -59,7 +65,9 @@ const DashbardLayout:React.FunctionComponent<IProps> = (
             open={drawerOpen}
             color={'primary'}
             docked={false}
-            onSwitchToLaunchBar={onLaunchBarToggle}
+            onSwitchToLaunchBar={hideSwitchToLaunchbar?null:onLaunchBarToggle}
+            headerPrefixElements={headerPrefixElements}
+            headerSuffixElements={headerSuffixElements}
             onMinimize={onMinimize}
             onMaximize={onToggleWinState}
             onClose = {onWinClose}
