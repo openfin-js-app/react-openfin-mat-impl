@@ -2,6 +2,8 @@
   "name": "react-openfin-mat-impl",
   "version": "0.70.10.beta",
   "description": "Materialize UI implementation of react-openfin",
+  "homepage": "https://albertleigh.github.io/openfin-react-latest",
+  "keywords":["openfin","react","material-ui","albert"],
   "main": "index.ts",
   "scripts": {
     "prebuild": "rimraf build",
