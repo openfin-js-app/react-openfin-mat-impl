@@ -1,2 +1,19 @@
-## [0.70.10] 2019-04-04
+## [0.70.10.beta] 2019-04-04
 - Initial stable release
+- Provide Config General Fields
+- Provide Config Theme Fields
+- Provide Config Language Field
+- Provide Config Json Field
+- Provide Header
+- Provide Header Links
+- Provide Theme Switcher upon header
+- Provide Offline overlay
+- Provide SiderBar
+- Provide Snackbar
+- Provide Configuration View
+- Provide Report View
+- Provide Dashboard Layout
+- Provide Children Window Layout
+- Provide LaunchBar Layout
+- Provide Loading Layout
+- Provide Notification Layout
