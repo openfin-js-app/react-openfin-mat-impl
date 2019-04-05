@@ -1,6 +1,6 @@
 {
   "name": "react-openfin-mat-impl",
-  "version": "0.70.04-beta",
+  "version": "0.70.10.beta",
   "description": "Materialize UI implementation of react-openfin",
   "main": "index.ts",
   "scripts": {
@@ -9,11 +9,12 @@
     "build:copy-files": "node ./scripts/copy-files.js",
     "build": "yarn prebuild && yarn build:es2016 && yarn build:copy-files",
     "release-staging": "yarn build && npm publish build --registry=https://albertli.ddns.net:9004/repository/npm-private/",
+    "release":"yarn build && npm publish build --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@albertli.ddns.net:open-fin/react-openfin-mat-impl.git"
+    "url": "git@github.com:openfin-js-app/react-openfin-mat-impl.git"
   },
   "author": "Wentao Li <liwentao90@yahoo.com>",
   "license": "MIT",
@@ -30,7 +31,7 @@
     "react-i18next": "10.6.1",
     "react-json-view": "^1.19.1",
     "react-number-format": "^4.0.7",
-    "react-openfin": "0.70.4-beta",
+    "react-openfin": "0.70.1-0.beta",
     "react-particles-js": "^2.5.1",
     "react-router-dom": "^5.0.0",
     "react-splitter-layout": "^4.0.0",
