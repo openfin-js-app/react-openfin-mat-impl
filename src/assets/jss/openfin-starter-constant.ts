@@ -77,7 +77,7 @@ const initState:IOpenfinMatImplStyleConstant = {
 export const initializeState = (state:Partial<IOpenfinMatImplStyleConstant>)=>{
     Object.keys(initState).forEach( key => {
         if (state[key]){
-            initState[key] = this.state[key]
+            initState[key] = state[key]
         }
     })
 }
