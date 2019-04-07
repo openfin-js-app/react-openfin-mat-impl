@@ -119,8 +119,8 @@ const DashbardLayout:React.FunctionComponent<IProps> = (
         <Snackbar
             key={snackBarMsgInfo.key}
             anchorOrigin={{
-                vertical:'bottom',
-                horizontal:'center'
+                vertical:snackBarMsgInfo.vertical?snackBarMsgInfo.vertical:'bottom',
+                horizontal:snackBarMsgInfo.horizontal?snackBarMsgInfo.horizontal:'center',
             }}
             open={snackBarOpen}
             autoHideDuration={6000}
