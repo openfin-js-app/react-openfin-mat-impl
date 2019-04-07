@@ -63,25 +63,27 @@ const SidebarComp:React.FunctionComponent<IProps> = (
                             <prop.icon/>
                         </ListItemIcon>
                         <ListItemText
-                            primary={t(prop.sidebarName)}
                             className={classes.itemText + whiteFontClasses}
+                            primary={t(prop.sidebarName)}
                             disableTypography={true}
                         />
                     </ListItem>
                 </NavLink>);
             }):null}
-            {menuItems?menuItems.map((menuItem:ISideBarMenuItem)=>(
-                <ListItem button className={cx(classes.itemLink, classes.whiteFont)}>
-                    <ListItemIcon className={cx(classes.itemIcon, classes.whiteFont)}>
-                        {menuItem.icon}
-                    </ListItemIcon>
-                    <ListItemText
-                        primary={t(menuItem.label)}
-                        className={cx(classes.itemIcon, classes.whiteFont)}
-                        onClick={menuItem.onClick}
-                        disableTypography={true}
-                    />
-                </ListItem>
+            {menuItems?menuItems.map((menuItem:ISideBarMenuItem,key:number)=>(
+                <div className={classes.item} key={key}>
+                    <ListItem button className={cx(classes.itemLink, classes.whiteFont)}>
+                        <ListItemIcon className={cx(classes.itemIcon, classes.whiteFont)}>
+                            {menuItem.icon}
+                        </ListItemIcon>
+                        <ListItemText
+                            className={cx(classes.itemText, classes.whiteFont)}
+                            primary={t(menuItem.label)}
+                            onClick={menuItem.onClick}
+                            disableTypography={true}
+                        />
+                    </ListItem>
+                </div>
             )):null}
         </List>
     );
