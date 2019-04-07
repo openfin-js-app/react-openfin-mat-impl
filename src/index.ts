@@ -1,5 +1,7 @@
 export { initializeState as InitalizaeReactOpenfinMatImpl } from './assets/jss/openfin-starter-constant';
 
+export * from './GlobalTypes';
+
 export * from './launchBar';
 
 export * from './routes';

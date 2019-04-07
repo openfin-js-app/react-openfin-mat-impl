@@ -13,15 +13,16 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 import { useTranslation } from 'react-i18next';
 
+import { ISideBarMenuItem } from '../../GlobalTypes';
 import { sidebarCompStyle as style } from '../../assets/jss'
-
 import {RouteItem, IRouteCompItem} from '../../routes';
 
 interface IProps {
     open:boolean,
-    routes:RouteItem[],
     color:string,
     image:string,
+    routes?:RouteItem[],
+    menuItems?:ISideBarMenuItem[],
 }
 
 const useStyles = makeStyles(style);
@@ -34,7 +35,7 @@ const SidebarComp:React.FunctionComponent<IProps> = (
     props
 )=>{
     const {
-        open, routes, color, image
+        open, routes, menuItems, color, image
     } = props;
 
     const classes = useStyles();
@@ -43,7 +44,7 @@ const SidebarComp:React.FunctionComponent<IProps> = (
 
     const links = (
         <List className={classes.list}>
-            {routes.map((prop:RouteItem, key:number)=>{
+            {routes?routes.map((prop:RouteItem, key:number)=>{
                 if (prop.redirect) return null;
                 prop = prop as IRouteCompItem;
                 const listItemClasses = cx({
@@ -68,7 +69,20 @@ const SidebarComp:React.FunctionComponent<IProps> = (
                         />
                     </ListItem>
                 </NavLink>);
-            })}
+            }):null}
+            {menuItems?menuItems.map((menuItem:ISideBarMenuItem)=>(
+                <ListItem button className={cx(classes.itemLink, classes.whiteFont)}>
+                    <ListItemIcon className={cx(classes.itemIcon, classes.whiteFont)}>
+                        {menuItem.icon}
+                    </ListItemIcon>
+                    <ListItemText
+                        primary={t(menuItem.label)}
+                        className={cx(classes.itemIcon, classes.whiteFont)}
+                        onClick={menuItem.onClick}
+                        disableTypography={true}
+                    />
+                </ListItem>
+            )):null}
         </List>
     );
 

@@ -8,6 +8,8 @@ import Snackbar from '@material-ui/core/Snackbar';
 
 import { makeStyles } from '@material-ui/styles';
 
+import { ISideBarMenuItem } from '../../GlobalTypes';
+
 import {RouteItem} from '../../routes';
 import {Header, OfflineOverlay, Sidebar, SnackbarContent} from '../../components';
 
@@ -16,6 +18,8 @@ import {dashboardLayoutStyle as style} from '../../assets/jss';
 interface IProps {
     appLogo:string,
     routes: RouteItem[],
+    sidebarBgUrl?:string,
+    menuItems?: ISideBarMenuItem[],
     hideSwitchToLaunchbar?:boolean,
     headerPrefixElements?:React.ReactNode,
     headerSuffixElements?:React.ReactNode,
@@ -28,6 +32,7 @@ const useStyles = makeStyles(style);
 const DashbardLayout:React.FunctionComponent<IProps> = (
     {
         routes,
+        sidebarBgUrl,menuItems,
         hideSwitchToLaunchbar,
         headerPrefixElements,
         headerSuffixElements,
@@ -77,8 +82,9 @@ const DashbardLayout:React.FunctionComponent<IProps> = (
             <Sidebar
                 routes={routes}
                 open={drawerOpen}
+                menuItems={menuItems}
                 color={"primary"}
-                image={'/img/sidebar-1.jpg'}
+                image={sidebarBgUrl?sidebarBgUrl:'/img/sidebar-1.jpg'}
                 {...rest}
             />
             <div className={cx(
