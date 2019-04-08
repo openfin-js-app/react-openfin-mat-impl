@@ -1,6 +1,6 @@
 {
   "name": "react-openfin-mat-impl",
-  "version": "0.70.11.beta",
+  "version": "0.70.12.beta",
   "description": "Materialize UI implementation of react-openfin",
   "homepage": "https://albertleigh.github.io/openfin-react-latest",
   "keywords":["openfin","react","material-ui","albert"],
@@ -33,7 +33,7 @@
     "react-i18next": "10.6.1",
     "react-json-view": "^1.19.1",
     "react-number-format": "^4.0.7",
-    "react-openfin": "0.70.1-1.beta",
+    "react-openfin": "0.70.1-2.beta",
     "react-particles-js": "^2.5.1",
     "react-router-dom": "^5.0.0",
     "react-splitter-layout": "^4.0.0",
