@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { InitializeReactOpenfin, ReactOpenfin, MuiTheme } from 'react-openfin';
+import { InitializeReactOpenfin, ReactOpenfin, REACT_OPENFIN_STORE } from 'react-openfin';
 
 import Switch from '@material-ui/core/Switch';
 
@@ -45,9 +45,9 @@ describe('Config Theme',()=>{
         const switches = wrapper.find(Switch);
         expect(switches).toHaveLength(1);
 
-        const theme1 = window.REACT_OPENFIN_STORE.getState().config.application.theme;
+        const theme1 = window[REACT_OPENFIN_STORE].getState().config.application.theme;
         switches.at(0).props().onChange();
-        const theme2 = window.REACT_OPENFIN_STORE.getState().config.application.theme;
+        const theme2 = window[REACT_OPENFIN_STORE].getState().config.application.theme;
 
         expect(theme1).not.toEqual(theme2);
 

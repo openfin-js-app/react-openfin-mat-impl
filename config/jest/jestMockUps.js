@@ -7,7 +7,9 @@ jest.mock('react-i18next', () => ({
     useTranslation: (ns, options) => {
         return {
             t: (label)=>label,
-            i18n: {},
+            i18n: {
+                changeLanguage:()=>{}
+            },
             ready: true,
         }
     }
