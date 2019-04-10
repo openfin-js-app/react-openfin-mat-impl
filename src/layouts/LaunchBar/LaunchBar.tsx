@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import { ApplicationContext } from "react-openfin";
+import { ApplicationContext, ILaunchBarItem } from "react-openfin";
 
 import cx from 'classnames';
 
@@ -22,13 +22,11 @@ import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap';
 
 import { launchBarLayoutStyle as style } from '../../assets/jss';
 
-import { IlaunchBarItemType } from '../../launchBar';
-
 const useStyles = makeStyles(style);
 
 interface IProps {
     appLogo:string,
-    items:IlaunchBarItemType[],
+    items:ILaunchBarItem[],
 }
 
 const LaunchBarComp:React.FunctionComponent<IProps> = (

@@ -2,8 +2,6 @@ export { initializeState as InitalizaeReactOpenfinMatImpl } from './assets/jss/o
 
 export * from './GlobalTypes';
 
-export * from './launchBar';
-
 export * from './routes';
 export * from './components';
 export * from './layouts';
