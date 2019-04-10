@@ -76,14 +76,12 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx,js,jsx,mjs}",
-      "!src/**/*.d.ts",
-      "!src/serviceWorker.js",
-      "!src/i18n.ts",
-      "!src/index.tsx"
+      "!src/**/*.d.ts"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
-      "<rootDir>/config/jest/setupTests.js"
+      "<rootDir>/config/jest/setupTests.js",
+      "<rootDir>/config/jest/jestMockUps.js"
     ],
     "testMatch": [
       "**/__tests__/**/*.{ts,tsx,js,jsx,mjs}",
