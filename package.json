@@ -3,7 +3,12 @@
   "version": "0.70.12.beta",
   "description": "Materialize UI implementation of react-openfin",
   "homepage": "https://albertleigh.github.io/openfin-react-latest",
-  "keywords":["openfin","react","material-ui","albert"],
+  "keywords": [
+    "openfin",
+    "react",
+    "material-ui",
+    "albert"
+  ],
   "main": "index.ts",
   "scripts": {
     "prebuild": "rimraf build",
@@ -11,8 +16,8 @@
     "build:copy-files": "node ./scripts/copy-files.js",
     "build": "yarn prebuild && yarn build:es2016 && yarn build:copy-files",
     "release-staging": "yarn build && npm publish build --registry=https://albertli.ddns.net:9004/repository/npm-private/",
-    "release":"yarn build && npm publish build --access public",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "yarn build && npm publish build --access public",
+    "test": "jest --clearCache && node scripts/test.js"
   },
   "repository": {
     "type": "git",
@@ -41,9 +46,12 @@
     "@types/classnames": "^2.2.7",
     "@types/enzyme": "^3.9.0",
     "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.11",
     "@types/react": "^16.8.12",
     "@types/react-dom": "^16.8.2",
     "@types/react-redux": "^7.0.5",
+    "babel-jest": "^24.7.1",
+    "babel-preset-react-app": "^7.0.2",
     "chalk": "^2.4.2",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
@@ -75,8 +83,7 @@
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
-      "<rootDir>/config/jest/setupTests.js",
-      "<rootDir>/config/jest/jestMockUps.js"
+      "<rootDir>/config/jest/setupTests.js"
     ],
     "testMatch": [
       "**/__tests__/**/*.{ts,tsx,js,jsx,mjs}",
