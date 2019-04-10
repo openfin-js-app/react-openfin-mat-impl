@@ -1,18 +1,20 @@
 import * as React from 'react';
 import { InitializeReactOpenfin, ReactOpenfin } from 'react-openfin';
+import configTabs from 'react-openfin/reduxs/config/constant';
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { createShallow, createMount } from '@material-ui/core/test-utils';
 
-import ReactJson from 'react-json-view';
+import ConfigView from './ConfigView';
 
-import ConfigJsonField from './ConfigJsonField';
+const muiTheme = createMuiTheme({});
 
-const theme = createMuiTheme({});
+const MyConfigView:React.FunctionComponent<{}> = ({})=>{
+    return (<ConfigView tabs={configTabs}/>)
+}
 
-
-describe('ConfigJsonField',()=>{
+describe('ConfigView',()=>{
 
     let shallow;
     let mount;
@@ -28,7 +30,6 @@ describe('ConfigJsonField',()=>{
         });
     });
 
-
     beforeEach(() => {
         mount = createMount();
         shallow = createShallow();
@@ -39,14 +40,13 @@ describe('ConfigJsonField',()=>{
     });
 
     it('render correctly',()=>{
-        const wrapper = mount(
-                <ReactOpenfin>
-                    <ThemeProvider theme={theme}>
-                        <ConfigJsonField/>
-                    </ThemeProvider>
-                </ReactOpenfin>
+        const wrapper = shallow(
+            <ReactOpenfin>
+                <ThemeProvider theme={muiTheme}>
+                    <MyConfigView/>
+                </ThemeProvider>
+            </ReactOpenfin>
         );
-        expect(wrapper.find(ReactJson)).toHaveLength(1);
         expect(wrapper).toBeTruthy();
     });
 
