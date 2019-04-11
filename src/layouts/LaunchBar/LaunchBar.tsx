@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import { ApplicationContext } from "react-openfin";
+import { ApplicationContext, ILaunchBarItem, getAllShownItems } from "react-openfin";
 
 import cx from 'classnames';
 
@@ -22,13 +22,11 @@ import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap';
 
 import { launchBarLayoutStyle as style } from '../../assets/jss';
 
-import { IlaunchBarItemType } from '../../launchBar';
-
 const useStyles = makeStyles(style);
 
 interface IProps {
     appLogo:string,
-    items:IlaunchBarItemType[],
+    items:ILaunchBarItem[],
 }
 
 const LaunchBarComp:React.FunctionComponent<IProps> = (
@@ -53,7 +51,9 @@ const LaunchBarComp:React.FunctionComponent<IProps> = (
 
     // const _launchBarItems = launchBarItems;
 
-    const buttonContainerWidth = items.length<10?items.length*64:576;
+    const shownItems = getAllShownItems(items);
+
+    const buttonContainerWidth = shownItems.length<10?shownItems.length*64:576;
 
     const handleLaunchBarItemBtnClick = (item) => ()=> {
         launchNewWin(item.appJson);
@@ -90,7 +90,7 @@ const LaunchBarComp:React.FunctionComponent<IProps> = (
                                 width:`${buttonContainerWidth}px`,
                             }}
                         >
-                            {items.map((item,index)=>{
+                            {shownItems.map((item,index)=>{
                                 if (item.icon){
                                     return <IconButton key={index}
                                                        className={classes.baseButton}

@@ -1,3 +1,5 @@
+import { ShownField } from 'react-openfin';
+
 import * as React from 'react';
 import {SvgIconProps} from '@material-ui/core/SvgIcon'
 
@@ -9,6 +11,7 @@ export interface IRouteCompItem {
     navbarName?:string,
     icon?:React.ComponentType<SvgIconProps>,
     component:React.ComponentType<any>,
+    shown?:ShownField,
     [key:string]:any,
 }
 

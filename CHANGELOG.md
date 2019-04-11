@@ -1,5 +1,4 @@
-## [0.70.10.beta] 2019-04-04
-- Initial stable release
+## [0.70.20] 2019-04-11
 - Provide Config General Fields
 - Provide Config Theme Fields
 - Provide Config Language Field
@@ -17,3 +16,7 @@
 - Provide LaunchBar Layout
 - Provide Loading Layout
 - Provide Notification Layout
+- Integrate with Travis CI
+
+## [0.70.10.beta] 2019-04-04
+- Initial stable release

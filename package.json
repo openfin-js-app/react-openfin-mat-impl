@@ -1,9 +1,14 @@
 {
   "name": "react-openfin-mat-impl",
-  "version": "0.70.10.beta",
+  "version": "0.70.20",
   "description": "Materialize UI implementation of react-openfin",
   "homepage": "https://albertleigh.github.io/openfin-react-latest",
-  "keywords":["openfin","react","material-ui","albert"],
+  "keywords": [
+    "openfin",
+    "react",
+    "material-ui",
+    "albert"
+  ],
   "main": "index.ts",
   "scripts": {
     "prebuild": "rimraf build",
@@ -11,8 +16,9 @@
     "build:copy-files": "node ./scripts/copy-files.js",
     "build": "yarn prebuild && yarn build:es2016 && yarn build:copy-files",
     "release-staging": "yarn build && npm publish build --registry=https://albertli.ddns.net:9004/repository/npm-private/",
-    "release":"yarn build && npm publish build --access public",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "yarn build && npm publish build --access public",
+    "test": "jest --clearCache && node scripts/test.js",
+    "test-coveralls": "node scripts/test.js --coverage --coverageReporters=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -27,13 +33,11 @@
     "@material-ui/styles": "^3.0.0-alpha.10",
     "material-ui-pickers": "^2.2.4",
     "moment": "^2.24.0",
-    "react": "16.8.6",
     "react-custom-scrollbars": "^4.2.1",
-    "react-dom": "16.8.6",
     "react-i18next": "10.6.1",
     "react-json-view": "^1.19.1",
     "react-number-format": "^4.0.7",
-    "react-openfin": "0.70.1-0.beta",
+    "react-openfin": "0.70.20",
     "react-particles-js": "^2.5.1",
     "react-router-dom": "^5.0.0",
     "react-splitter-layout": "^4.0.0",
@@ -43,10 +47,14 @@
     "@types/classnames": "^2.2.7",
     "@types/enzyme": "^3.9.0",
     "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.11",
     "@types/react": "^16.8.12",
     "@types/react-dom": "^16.8.2",
     "@types/react-redux": "^7.0.5",
+    "babel-jest": "^24.7.1",
+    "babel-preset-react-app": "^7.0.2",
     "chalk": "^2.4.2",
+    "coveralls": "^3.0.3",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.5",
@@ -70,10 +78,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx,js,jsx,mjs}",
-      "!src/**/*.d.ts",
-      "!src/serviceWorker.js",
-      "!src/i18n.ts",
-      "!src/index.tsx"
+      "!src/**/*.d.ts"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
