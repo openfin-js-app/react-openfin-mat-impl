@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
+import { shown } from 'react-openfin';
 import cx from 'classnames';
 
 import { makeStyles } from '@material-ui/styles';
@@ -47,6 +48,7 @@ const SidebarComp:React.FunctionComponent<IProps> = (
             {routes?routes.map((prop:RouteItem, key:number)=>{
                 if (prop.redirect) return null;
                 prop = prop as IRouteCompItem;
+                if (!shown<IRouteCompItem>(prop)) return null;
                 const listItemClasses = cx({
                     [" "+classes[color]]:activeRoute(prop.path,props)
                 });
