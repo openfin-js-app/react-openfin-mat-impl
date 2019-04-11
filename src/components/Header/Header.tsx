@@ -27,6 +27,9 @@ interface IProps{
     open?:boolean,
     windowsState:string,
     docked?:boolean,
+    hideSwitchToLaunchBar?:boolean,
+    headerPrefixElements?:React.ReactNode,
+    headerSuffixElements?:React.ReactNode,
     handleDrawerToggle?:MouseEventHandler<any>,
     onSwitchToLaunchBar?:MouseEventHandler<any>,
     onUndock?:MouseEventHandler<any>,
@@ -57,10 +60,12 @@ const HeaderComp:React.FunctionComponent<IProps> = (
     const classes = useStyles();
 
     const {
-            appLogo,
-            color, windowsState,
-            handleDrawerToggle, docked,
-            onSwitchToLaunchBar, onUndock, onMinimize, onMaximize, onClose,
+        appLogo,
+        color, windowsState,
+        docked,
+        headerPrefixElements, headerSuffixElements,
+        handleDrawerToggle,
+        onSwitchToLaunchBar, onUndock, onMinimize, onMaximize, onClose,
     } = props;
 
     const { t, i18n } = useTranslation('menu', { useSuspense: false });
@@ -80,12 +85,17 @@ const HeaderComp:React.FunctionComponent<IProps> = (
                     </Fab>
                     :null}
                 <img src={appLogo} className={classes.companyLogImg}/>
-                <Button href={"#"} className={classes.title}>
-                    {t('appName')+"|"+ t(makeBrand(props))}
-                </Button>
+                {
+                    headerPrefixElements?
+                        headerPrefixElements:
+                        <Button href={"#"} className={classes.title}>
+                            {t('appName')+"|"+ t(makeBrand(props))}
+                        </Button>
+                }
             </div>
             <div className={classes.flex}/>
             <div className={classes.postFlex}>
+                {headerSuffixElements?headerSuffixElements:null}
                 <HeaderLinks
                     windowsState={windowsState}
                     docked = {docked}

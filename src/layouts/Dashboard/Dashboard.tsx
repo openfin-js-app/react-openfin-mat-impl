@@ -8,6 +8,8 @@ import Snackbar from '@material-ui/core/Snackbar';
 
 import { makeStyles } from '@material-ui/styles';
 
+import { ISideBarMenuItem } from '../../GlobalTypes';
+
 import {RouteItem} from '../../routes';
 import {Header, OfflineOverlay, Sidebar, SnackbarContent} from '../../components';
 
@@ -16,6 +18,11 @@ import {dashboardLayoutStyle as style} from '../../assets/jss';
 interface IProps {
     appLogo:string,
     routes: RouteItem[],
+    sidebarBgUrl?:string,
+    menuItems?: ISideBarMenuItem[],
+    hideSwitchToLaunchbar?:boolean,
+    headerPrefixElements?:React.ReactNode,
+    headerSuffixElements?:React.ReactNode,
     // for testing
     location?:any,
 }
@@ -25,6 +32,10 @@ const useStyles = makeStyles(style);
 const DashbardLayout:React.FunctionComponent<IProps> = (
     {
         routes,
+        sidebarBgUrl,menuItems,
+        hideSwitchToLaunchbar,
+        headerPrefixElements,
+        headerSuffixElements,
         ...rest
     }
 )=>{
@@ -59,7 +70,9 @@ const DashbardLayout:React.FunctionComponent<IProps> = (
             open={drawerOpen}
             color={'primary'}
             docked={false}
-            onSwitchToLaunchBar={onLaunchBarToggle}
+            onSwitchToLaunchBar={hideSwitchToLaunchbar?null:onLaunchBarToggle}
+            headerPrefixElements={headerPrefixElements}
+            headerSuffixElements={headerSuffixElements}
             onMinimize={onMinimize}
             onMaximize={onToggleWinState}
             onClose = {onWinClose}
@@ -69,8 +82,9 @@ const DashbardLayout:React.FunctionComponent<IProps> = (
             <Sidebar
                 routes={routes}
                 open={drawerOpen}
+                menuItems={menuItems}
                 color={"primary"}
-                image={'/img/sidebar-1.jpg'}
+                image={sidebarBgUrl?sidebarBgUrl:'/img/sidebar-1.jpg'}
                 {...rest}
             />
             <div className={cx(
@@ -105,8 +119,8 @@ const DashbardLayout:React.FunctionComponent<IProps> = (
         <Snackbar
             key={snackBarMsgInfo.key}
             anchorOrigin={{
-                vertical:'bottom',
-                horizontal:'center'
+                vertical:snackBarMsgInfo.vertical?snackBarMsgInfo.vertical:'bottom',
+                horizontal:snackBarMsgInfo.horizontal?snackBarMsgInfo.horizontal:'center',
             }}
             open={snackBarOpen}
             autoHideDuration={6000}

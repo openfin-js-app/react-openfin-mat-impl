@@ -14,6 +14,8 @@ import { dashboardLayoutStyle as style } from '../../assets/jss';
 interface IProps {
     appLogo:string,
     routes: RouteItem[],
+    headerPrefixElements?:React.ReactNode,
+    headerSuffixElements?:React.ReactNode,
     // for testing
     location?:any,
 }
@@ -23,6 +25,8 @@ const useStyles = makeStyles(style);
 const ChildWindowLayout:React.FunctionComponent<IProps> = (
     {
         routes,
+        headerPrefixElements,
+        headerSuffixElements,
         ...rest
     }
 ) => {
@@ -64,6 +68,8 @@ const ChildWindowLayout:React.FunctionComponent<IProps> = (
                 windowsState={windowsState}
                 color={'info'}
                 docked={docked}
+                headerPrefixElements={headerPrefixElements}
+                headerSuffixElements={headerSuffixElements}
                 onUndock = {onUndock}
                 onMinimize={onMinimize}
                 onMaximize={onToggleWinState}
@@ -99,8 +105,8 @@ const ChildWindowLayout:React.FunctionComponent<IProps> = (
             <Snackbar
                 key={snackBarMsgInfo.key}
                 anchorOrigin={{
-                    vertical:'bottom',
-                    horizontal:'center'
+                    vertical:snackBarMsgInfo.vertical?snackBarMsgInfo.vertical:'bottom',
+                    horizontal:snackBarMsgInfo.horizontal?snackBarMsgInfo.horizontal:'center',
                 }}
                 open={snackBarOpen}
                 autoHideDuration={6000}
