@@ -1,9 +1,13 @@
 import * as React from 'react';
 import { InitializeReactOpenfin, ReactOpenfin } from 'react-openfin';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 import { createShallow, createMount } from '@material-ui/core/test-utils';
 
 import Loading from './Loading';
 import { LoadingBarComponent } from './Loading';
+
+const theme = createMuiTheme({});
 
 describe('LoadingLayout',()=>{
 
@@ -13,7 +17,7 @@ describe('LoadingLayout',()=>{
 
     beforeAll(() => {
         InitializeReactOpenfin({
-            finUuid: process.env.REACT_APP_FIN_UUID,
+            finUuid: 'non-main-win-fin-uuid',
             finMockupForceSilentMode:true,
             i18n:{} as any,
             hist:{} as any,
@@ -47,7 +51,11 @@ describe('LoadingLayout',()=>{
 
     it('Loading bar render correctly after a lone time',()=>{
         jest.useFakeTimers();
-        const wrapper = mount(<LoadingBarComponent/>);
+        const wrapper = mount(
+            <ThemeProvider theme={theme}>
+                <LoadingBarComponent/>
+            </ThemeProvider>
+        );
         expect(wrapper).toBeTruthy();
         jest.advanceTimersByTime(10*60*1000);
         expect(wrapper).toBeTruthy();

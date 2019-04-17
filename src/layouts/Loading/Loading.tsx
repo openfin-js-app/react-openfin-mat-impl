@@ -2,11 +2,13 @@ import * as React from 'react';
 import { useContext, useState, useEffect } from 'react';
 import Particles from 'react-particles-js';
 import { ApplicationContext } from 'react-openfin';
+import initState from 'react-openfin/init';
 import {useTranslation} from 'react-i18next';
 
 import { makeStyles } from '@material-ui/styles';
 import { Theme, createStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Typography from '@material-ui/core/Typography';
 
 const style = (theme:Theme) => createStyles({
     container:{
@@ -62,6 +64,23 @@ const style = (theme:Theme) => createStyles({
         bottom:'40px',
         right:'60px',
         width:'40px',
+    },
+    mainWinContainer:{
+        position:'relative',
+        width:'100vw',
+        height:'100vh',
+        overflow:'hidden',
+        backgroundColor: theme.palette.background.default,
+        display: 'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+        alignContent:'center',
+    },
+    mainWinAppIcon:{
+        width:'30vmin',
+        height:'30vmin',
+        marginBottom: 30,
     },
 });
 
@@ -138,20 +157,27 @@ const LoadingComponent:React.FunctionComponent<IProps> = (
         }
     } = useContext(ApplicationContext);
 
-    return(
-        <div className={classes.container}>
-            <img src={appLogo} className={classes.appLogoImg} />
-            <div className={classes.appName}>{t('appName')}</div>
-            <div className={classes.versionStr}>{version}</div>
-            <LoadingBarComponent/>
-            <img src={companyLogo} className={classes.companyLogImg} />
-            <div className={classes.statusMsg}>{t(loadingMsg)}</div>
-            <Particles
-                width={"100%"}
-                height={"100%"}
-            />
-        </div>
-    );
+    if (window.name === initState.finUuid){
+        return (<div className={classes.mainWinContainer}>
+            <img src={appLogo} className={classes.mainWinAppIcon} />
+            <Typography variant={"h3"}>{t(loadingMsg)}</Typography>
+        </div>)
+    }else{
+        return(
+            <div className={classes.container}>
+                <img src={appLogo} className={classes.appLogoImg} />
+                <div className={classes.appName}>{t('appName')}</div>
+                <div className={classes.versionStr}>{version}</div>
+                <LoadingBarComponent/>
+                <img src={companyLogo} className={classes.companyLogImg} />
+                <div className={classes.statusMsg}>{t(loadingMsg)}</div>
+                <Particles
+                    width={"100%"}
+                    height={"100%"}
+                />
+            </div>
+        );
+    }
 }
 
 export default LoadingComponent;
