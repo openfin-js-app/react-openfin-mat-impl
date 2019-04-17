@@ -4,6 +4,7 @@ import Particles from 'react-particles-js';
 import { ApplicationContext } from 'react-openfin';
 import initState from 'react-openfin/init';
 import {useTranslation} from 'react-i18next';
+import cx from 'classnames';
 
 import { makeStyles } from '@material-ui/styles';
 import { Theme, createStyles } from '@material-ui/core/styles';
@@ -78,10 +79,18 @@ const style = (theme:Theme) => createStyles({
         alignContent:'center',
     },
     mainWinAppIcon:{
-        width:'30vmin',
-        height:'30vmin',
+        width:'20vmin',
+        height:'20vmin',
         marginBottom: 30,
     },
+    flash:{
+        animation: '$blinker 1s linear infinite',
+    },
+    '@keyframes blinker':{
+        '50%': {
+            opacity: 0,
+        }
+    }
 });
 
 const useStyles = makeStyles(style);
@@ -159,8 +168,10 @@ const LoadingComponent:React.FunctionComponent<IProps> = (
 
     if (window.name === initState.finUuid){
         return (<div className={classes.mainWinContainer}>
-            <img src={appLogo} className={classes.mainWinAppIcon} />
-            <Typography variant={"h3"}>{t(loadingMsg)}</Typography>
+            <img src={appLogo}
+                 className={cx( classes.flash, classes.mainWinAppIcon,)}
+            />
+            <Typography variant={"h5"}>{t(loadingMsg)}</Typography>
         </div>)
     }else{
         return(
