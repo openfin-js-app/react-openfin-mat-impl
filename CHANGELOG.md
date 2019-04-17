@@ -1,3 +1,7 @@
+## [0.70.30] 2019-04-17
+- Implement react-openfin@0.70.30
+- Provide a main window loading view shown only if main window started out of primary monitor
+
 ## [0.70.20] 2019-04-11
 - Provide Config General Fields
 - Provide Config Theme Fields
