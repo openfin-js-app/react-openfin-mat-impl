@@ -8,8 +8,23 @@ import cx from 'classnames';
 
 import { makeStyles } from '@material-ui/styles';
 import { Theme, createStyles } from '@material-ui/core/styles';
+import { lighten, darken } from '@material-ui/core/styles/colorManipulator';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
+
+import constant from '../../assets/jss/openfin-starter-constant';
+
+const BACKGROUND_STR =  constant.primaryColor == '#1e88e5'?
+    '#4dd0e1, #26c6da, #00bcd4, #00acc1, #0097a7, #00838f, #006064':
+    `
+    ${darken(constant.primaryColor,0.3)}, 
+    ${darken(constant.primaryColor,0.2)}, 
+    ${darken(constant.primaryColor,0.1)}, 
+    ${constant.primaryColor},
+    ${lighten(constant.primaryColor,0.1)}, 
+    ${lighten(constant.primaryColor,0.2)}, 
+    ${lighten(constant.primaryColor,0.3)}
+    `;
 
 const style = (theme:Theme) => createStyles({
     container:{
@@ -17,7 +32,7 @@ const style = (theme:Theme) => createStyles({
         width:'100vw',
         height:'100vh',
         overflow:'hidden',
-        background:'linear-gradient(141deg,  #4dd0e1, #26c6da, #00bcd4, #00acc1, #0097a7, #00838f, #006064)',
+        background:`linear-gradient(141deg,  ${BACKGROUND_STR})`,
         backgroundSize: '200%',
         animation: 'gba 5s infinite',
     },
