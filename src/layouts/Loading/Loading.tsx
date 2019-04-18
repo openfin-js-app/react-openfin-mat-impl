@@ -14,25 +14,12 @@ import Typography from '@material-ui/core/Typography';
 
 import constant from '../../assets/jss/openfin-starter-constant';
 
-const BACKGROUND_STR =  constant.primaryColor == '#1e88e5'?
-    '#4dd0e1, #26c6da, #00bcd4, #00acc1, #0097a7, #00838f, #006064':
-    `
-    ${darken(constant.primaryColor,0.3)}, 
-    ${darken(constant.primaryColor,0.2)}, 
-    ${darken(constant.primaryColor,0.1)}, 
-    ${constant.primaryColor},
-    ${lighten(constant.primaryColor,0.1)}, 
-    ${lighten(constant.primaryColor,0.2)}, 
-    ${lighten(constant.primaryColor,0.3)}
-    `;
-
 const style = (theme:Theme) => createStyles({
     container:{
         position:'relative',
         width:'100vw',
         height:'100vh',
         overflow:'hidden',
-        background:`linear-gradient(141deg,  ${BACKGROUND_STR})`,
         backgroundSize: '200%',
         animation: 'gba 5s infinite',
     },
@@ -150,6 +137,7 @@ export const LoadingBarComponent:React.FunctionComponent<{}> = (
     return(
         <LinearProgress
             className={classes.loadingProgressBar}
+            color="secondary"
             variant={"determinate"}
             value={state.completed}
         />
@@ -181,6 +169,19 @@ const LoadingComponent:React.FunctionComponent<IProps> = (
         }
     } = useContext(ApplicationContext);
 
+    const BACKGROUND_STR =  constant.primaryColor == '#1e88e5'?
+        '#4dd0e1, #26c6da, #00bcd4, #00acc1, #0097a7, #00838f, #006064':
+        `
+        ${darken(constant.primaryColor,0.3)}, 
+        ${darken(constant.primaryColor,0.2)}, 
+        ${darken(constant.primaryColor,0.1)}, 
+        ${constant.primaryColor},
+        ${lighten(constant.primaryColor,0.1)}, 
+        ${lighten(constant.primaryColor,0.2)}, 
+        ${lighten(constant.primaryColor,0.3)}
+        `;
+
+
     if (window.name === initState.finUuid){
         return (<div className={classes.mainWinContainer}>
             <img src={appLogo}
@@ -190,7 +191,11 @@ const LoadingComponent:React.FunctionComponent<IProps> = (
         </div>)
     }else{
         return(
-            <div className={classes.container}>
+            <div className={classes.container}
+                 style={{
+                     background:`linear-gradient(141deg,  ${BACKGROUND_STR})`,
+                 }}
+            >
                 <img src={appLogo} className={classes.appLogoImg} />
                 <div className={classes.appName}>{t('appName')}</div>
                 <div className={classes.versionStr}>{version}</div>
