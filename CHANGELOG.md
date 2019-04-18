@@ -1,3 +1,6 @@
+## [0.70.40] 2019-04-18
+- Seize loading layout background color from constants
+
 ## [0.70.30] 2019-04-17
 - Implement react-openfin@0.70.30
 - Provide a main window loading view shown only if main window started out of primary monitor
