@@ -1,3 +1,6 @@
+## [0.70.60] 2019-05-01
+- Add firstAppBar props to LaunchBar lyt
+
 ## [0.70.40] 2019-04-18
 - Seize loading layout background color from constants
 
