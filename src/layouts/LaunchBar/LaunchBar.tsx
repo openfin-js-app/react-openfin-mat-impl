@@ -27,12 +27,14 @@ const useStyles = makeStyles(style);
 interface IProps {
     appLogo:string,
     items:ILaunchBarItem[],
+    firstAppBar?:React.ReactNode,
 }
 
 const LaunchBarComp:React.FunctionComponent<IProps> = (
     {
         appLogo,
-        items
+        items,
+        firstAppBar,
     }
 )=>{
 
@@ -63,7 +65,14 @@ const LaunchBarComp:React.FunctionComponent<IProps> = (
         <span>
                 <AppBar position={"static"}>
                     <Toolbar className={classes.toolBar}>
-                        <img src={appLogo} className={classes.appLogoImg}/>
+                        {
+                            firstAppBar?
+                                <div className={classes.firstAppBarContainer}>
+                                    {firstAppBar}
+                                </div> :
+                                <img src={appLogo} className={classes.appLogoImg}/>
+
+                        }
                         {
                             docked && onUndock ?
                                 <Fab
