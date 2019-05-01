@@ -6,10 +6,16 @@ import initState from '../openfin-starter-constant';
 const launchBtnHeight = 64;
 const launchBtnContainerMaxWidth = 576;
 
-const launchBarStyle:any = (theme:Theme) => createStyles({
+const launchBarStyle = (theme:Theme) => createStyles({
     toolBar:{
         height:64,
         padding:'0 0',
+    },
+    firstAppBarContainer:{
+        width:64,
+        height:64,
+        "-webkit-user-select":"none",
+        "-webkit-app-region":"drag",
     },
     appLogoImg:{
         width:40,
