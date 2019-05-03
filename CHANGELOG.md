@@ -1,3 +1,7 @@
+## [0.70.80] 2019-05-03
+- Depends up react-openfin@0.70.80 
+- Refactor the styles of Header suffix and prefix elements 
+
 ## [0.70.60] 2019-05-01
 - Add firstAppBar props to LaunchBar lyt
 
