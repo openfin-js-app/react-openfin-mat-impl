@@ -40,10 +40,13 @@ const headerStyle = (theme:Theme) =>createStyles({
         minHeight:initState.appbarHeight,
     },
     postFlex:{
+        display:'flex',
+        alignItems:'center',
         position:'relative',
         top: -initState.windowBorder/2,
         height:initState.appbarHeight,
         minHeight:initState.appbarHeight,
+        maxHeight:initState.appbarHeight,
     },
     menuBtn:{
         position:'relative',
