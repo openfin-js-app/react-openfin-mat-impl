@@ -41,7 +41,8 @@ const headerStyle = (theme:Theme) =>createStyles({
     },
     postFlex:{
         display:'flex',
-        alignItems:'center',
+        flexWrap:'nowrap',
+        alignItems:'baseline',
         position:'relative',
         top: -initState.windowBorder/2,
         height:initState.appbarHeight,
