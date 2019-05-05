@@ -72,5 +72,5 @@ const LaunchBar:React.FunctionComponent<{}> = ({})=>{
 ```
 
 
-[version-badge]: https://img.shields.io/badge/version-0.70.60-green.svg
+[version-badge]: https://img.shields.io/badge/version-0.70.80-green.svg
 [license-badge]: https://img.shields.io/badge/license-MIT-green.svg
