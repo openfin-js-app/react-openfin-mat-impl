@@ -30,9 +30,11 @@ const headerStyle = (theme:Theme) =>createStyles({
     preFlex:{
         display:'flex',
         flexWrap:'nowrap',
+        position:'relative',
         top: -initState.windowBorder/2,
         height:initState.appbarHeight,
         minHeight:initState.appbarHeight,
+        maxHeight:initState.appbarHeight,
     },
     flex:{
         flex:1,
@@ -50,8 +52,6 @@ const headerStyle = (theme:Theme) =>createStyles({
         maxHeight:initState.appbarHeight,
     },
     menuBtn:{
-        position:'relative',
-        top: -initState.windowBorder/2,
         marginLeft:initState.appbarHeight * 0.4,
         backgroundColor:"transparent",
         "-webkit-app-region":"no-drag",
@@ -69,8 +69,9 @@ const headerStyle = (theme:Theme) =>createStyles({
         }
     },
     companyLogImg:{
-        height: initState.appbarHeight * 0.8,
-        marginLeft:initState.appbarHeight * 0.4,
+        height: initState.appbarHeight-initState.windowBorder,
+        marginTop: initState.windowBorder/2,
+        marginLeft: initState.appbarHeight * 0.4,
         "-webkit-app-region":"no-drag",
     },
     title:{

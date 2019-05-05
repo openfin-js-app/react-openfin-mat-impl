@@ -8,8 +8,6 @@ const switcherHeight = initState.appbarHeight;
 const headerThemeSwitcherCompStyle = (theme:Theme)=> createStyles({
 
     switcher:{
-        position:'relative',
-        top: -initState.windowBorder/2,
         width: switcherWidth,
         height: switcherHeight,
         backgroundSize:`${switcherWidth*2}px ${switcherHeight}px`,
