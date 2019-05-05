@@ -81,7 +81,7 @@ const headerStyle = (theme:Theme) =>createStyles({
         textTransform:"none",
         color:"inherit",
         height:initState.appbarHeight,
-        minHeight:initState.appbarHeight,
+        maxHeight:initState.appbarHeight,
         marginLeft:initState.appbarHeight * 0.2,
         "&:hover,&:focus":{
             background:"transparent",
