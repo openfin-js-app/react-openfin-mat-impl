@@ -1,3 +1,7 @@
+## [0.80.20] 2019-05-10
+- Depends up react-openfin@0.80.20 
+- Initially update README.md
+
 ## [0.70.80] 2019-05-03
 - Depends up react-openfin@0.70.80 
 - Refactor the styles of Header suffix and prefix elements 
