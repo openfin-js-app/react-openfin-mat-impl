@@ -5,7 +5,9 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { createShallow, createMount } from '@material-ui/core/test-utils';
 
-import DateTimePicker from 'material-ui-pickers/DateTimePicker';
+// import {
+//     DateTimePicker,
+// } from '@material-ui/pickers';
 
 import TextField from '@material-ui/core/TextField';
 

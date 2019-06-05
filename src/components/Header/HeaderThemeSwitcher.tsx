@@ -12,7 +12,7 @@ const HeaderThemeSwitcherComp:React.FunctionComponent<{}> = (
     {}
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const {
         config:{

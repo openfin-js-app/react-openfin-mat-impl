@@ -38,7 +38,7 @@ const LaunchBarComp:React.FunctionComponent<IProps> = (
     }
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const {
         state:{

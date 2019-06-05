@@ -17,7 +17,7 @@ const ConfigThemeField:React.FunctionComponent<{}> = (
     {}
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const { t, i18n } = useTranslation('config', { useSuspense: false });
 

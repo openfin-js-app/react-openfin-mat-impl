@@ -1,16 +1,15 @@
 import {MuiTheme} from 'react-openfin';
-import { createMuiTheme } from '@material-ui/core/styles';
+import createMuiTheme, { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import initState from '../assets/jss/openfin-starter-constant';
 
-export const buildMuiTheme = (theme:MuiTheme)=>{
+export const buildMuiTheme = (options:ThemeOptions, theme?:MuiTheme)=>{
     return createMuiTheme({
         typography:{
-            useNextVariants:true,
             fontSize: 8,
             htmlFontSize: 10,
         },
         palette:{
-            type:theme,
+            type:theme?theme:void 0,
             primary:{
                 main:initState.primaryColor,
             },
@@ -91,12 +90,9 @@ export const buildMuiTheme = (theme:MuiTheme)=>{
                 root:{
                     minHeight:'24px',
                 },
-                labelContainer:{
-                    paddingTop:'0px',
-                    paddingBottom:'0px',
-                }
             },
-        }
+        },
+        ...options,
     })
 };
 

@@ -2,11 +2,11 @@ import * as React from 'react';
 import * as shortid from 'shortid';
 import { FieldType } from 'react-openfin';
 
-import MuiPickersUtilsProvider from 'material-ui-pickers/MuiPickersUtilsProvider';
+import MuiPickersUtilsProvider from '@material-ui/pickers/MuiPickersUtilsProvider';
 import MomentUtils from '@date-io/moment'
-import TimePicker from 'material-ui-pickers/TimePicker';
-import DatePicker from 'material-ui-pickers/DatePicker';
-import DateTimePicker from 'material-ui-pickers/DateTimePicker';
+import {
+    TimePicker, DatePicker, DateTimePicker,
+} from '@material-ui/pickers';
 
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -37,7 +37,7 @@ const ConfigFieldComp:React.FunctionComponent<IProps> = (
     }
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const { t, i18n } = useTranslation('config', { useSuspense: false });
 

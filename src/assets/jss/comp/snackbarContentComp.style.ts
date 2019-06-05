@@ -34,7 +34,7 @@ const snackbarContent = (theme:Theme) => createStyles({
     },
     iconVariant:{
         opacity:0.9,
-        marginRight: theme.spacing.unit,
+        marginRight: theme.spacing(1),
     },
     message:{
         display:"flex",

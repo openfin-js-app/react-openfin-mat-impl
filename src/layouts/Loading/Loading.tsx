@@ -106,7 +106,7 @@ export const LoadingBarComponent:React.FunctionComponent<{}> = (
     {}
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const [state,setState] = useState<ILoadingBarComponentState>({
         completed:0,
@@ -159,7 +159,7 @@ const LoadingComponent:React.FunctionComponent<IProps> = (
     }
 ) => {
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const { t, i18n } = useTranslation('landing', { useSuspense: false });
 
