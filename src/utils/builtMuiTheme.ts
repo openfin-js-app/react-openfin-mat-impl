@@ -22,20 +22,10 @@ export const buildMuiTheme = (options:ThemeOptions, theme?:MuiTheme)=>{
         },
         overrides:{
             MuiButton:{
-                root:{
-                    color:'white',
-                },
                 contained:{
                     padding:'0px 5px',
                     minWidth:'50px',
                     minHeight:'20px',
-                    color:'white',
-                },
-                containedPrimary:{
-                    color:'white',
-                },
-                containedSecondary:{
-                    color:'white',
                 },
                 sizeSmall:{
                     padding:'0px 5px',

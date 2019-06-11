@@ -73,6 +73,7 @@ const style = (theme:Theme) => createStyles({
         width:'100vw',
         height:'100vh',
         overflow:'hidden',
+        color: theme.palette.getContrastText(theme.palette.background.default),
         backgroundColor: theme.palette.background.default,
         display: 'flex',
         flexDirection:'column',
