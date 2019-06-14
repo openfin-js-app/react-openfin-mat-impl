@@ -450,5 +450,5 @@ _TODO: provide the documentation of this part in next release_
 [react-openfin-mat-impl]:https://www.npmjs.com/package/react-openfin-mat-impl
 
 
-[version-badge]: https://img.shields.io/badge/version-0.90.20-green.svg
+[version-badge]: https://img.shields.io/badge/version-1.0.0-green.svg
 [license-badge]: https://img.shields.io/badge/license-MIT-green.svg
