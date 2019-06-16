@@ -57,7 +57,7 @@ const HeaderComp:React.FunctionComponent<IProps> = (
     props
 ) => {
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const {
         appLogo,

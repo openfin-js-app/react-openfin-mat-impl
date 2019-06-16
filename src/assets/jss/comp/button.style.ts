@@ -72,6 +72,7 @@ const buttonStyle = {
         }
     },
     rose: {
+        color: "#FFFFFF",
         backgroundColor: initState.roseColor,
         boxShadow:
             "0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12)",
@@ -82,6 +83,7 @@ const buttonStyle = {
         }
     },
     primary: {
+        color: "#FFFFFF",
         backgroundColor: initState.primaryColor,
         boxShadow:
             "0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12)",
@@ -92,6 +94,7 @@ const buttonStyle = {
         }
     },
     info: {
+        color: "#FFFFFF",
         backgroundColor: initState.infoColor,
         boxShadow:
             "0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12)",
@@ -102,6 +105,7 @@ const buttonStyle = {
         }
     },
     success: {
+        color: "#FFFFFF",
         backgroundColor: initState.successColor,
         boxShadow:
             "0 2px 2px 0 rgba(76, 175, 80, 0.14), 0 3px 1px -2px rgba(76, 175, 80, 0.2), 0 1px 5px 0 rgba(76, 175, 80, 0.12)",
@@ -112,6 +116,7 @@ const buttonStyle = {
         }
     },
     warning: {
+        color: "#FFFFFF",
         backgroundColor: initState.warningColor,
         boxShadow:
             "0 2px 2px 0 rgba(255, 152, 0, 0.14), 0 3px 1px -2px rgba(255, 152, 0, 0.2), 0 1px 5px 0 rgba(255, 152, 0, 0.12)",
@@ -122,6 +127,7 @@ const buttonStyle = {
         }
     },
     danger: {
+        color: "#FFFFFF",
         backgroundColor: initState.dangerColor,
         boxShadow:
             "0 2px 2px 0 rgba(244, 67, 54, 0.14), 0 3px 1px -2px rgba(244, 67, 54, 0.2), 0 1px 5px 0 rgba(244, 67, 54, 0.12)",

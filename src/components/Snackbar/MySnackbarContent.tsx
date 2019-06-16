@@ -44,7 +44,7 @@ const MySnackbarContentComp:React.FunctionComponent<Props> = (
     }
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const Icon = variantIcon[variant];
 

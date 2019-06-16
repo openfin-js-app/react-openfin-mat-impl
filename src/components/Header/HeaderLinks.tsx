@@ -35,7 +35,7 @@ const HeaderLinksComp:React.FunctionComponent<IProps> = (
     }
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     return (<React.Fragment>
         {

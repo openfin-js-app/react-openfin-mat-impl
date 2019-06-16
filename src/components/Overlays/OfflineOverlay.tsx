@@ -21,7 +21,7 @@ const OfflineOverlayComp:React.FunctionComponent<IProps> = (
     }
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const handleReloadBtnClick = ()=>{
         location.reload();

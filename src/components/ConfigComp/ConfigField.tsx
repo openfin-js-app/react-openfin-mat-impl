@@ -2,11 +2,9 @@ import * as React from 'react';
 import * as shortid from 'shortid';
 import { FieldType } from 'react-openfin';
 
-import MuiPickersUtilsProvider from 'material-ui-pickers/MuiPickersUtilsProvider';
-import MomentUtils from '@date-io/moment'
-import TimePicker from 'material-ui-pickers/TimePicker';
-import DatePicker from 'material-ui-pickers/DatePicker';
-import DateTimePicker from 'material-ui-pickers/DateTimePicker';
+import {
+    TimePicker, DatePicker, DateTimePicker, KeyboardDatePicker,
+} from '@material-ui/pickers';
 
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -37,7 +35,7 @@ const ConfigFieldComp:React.FunctionComponent<IProps> = (
     }
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const { t, i18n } = useTranslation('config', { useSuspense: false });
 
@@ -114,50 +112,43 @@ const ConfigFieldComp:React.FunctionComponent<IProps> = (
             />);
         case FieldType.DATE:
             return(
-                <MuiPickersUtilsProvider utils={MomentUtils}>
-                    <DatePicker
-                        keyboard
-                        label={t(_label)}
-                        format="DD/MM/YYYY"
-                        placeholder="DD/MM/YYYY"
-                        mask={value => (value ? [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/] : [])}
-                        value={value}
-                        onChange={handleDateChange}
-                        disableOpenOnEnter
-                        animateYearScrolling={false}
-                        margin={"dense"}
-                        {..._props}
-                    />
-                </MuiPickersUtilsProvider>
+                <KeyboardDatePicker
+                    label={t(_label)}
+                    format="DD/MM/YYYY"
+                    placeholder="DD/MM/YYYY"
+                    mask={value => (value ? [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/] : [])}
+                    value={value}
+                    onChange={handleDateChange}
+                    animateYearScrolling={false}
+                    margin={"dense"}
+                    {..._props}
+                />
             );
         case FieldType.TIME:
             return(
-                <MuiPickersUtilsProvider utils={MomentUtils}>
-                    <TimePicker
-                        seconds
-                        format="hh:mm:ss A"
-                        label={t(_label)}
-                        value={value}
-                        onChange={handleDateChange}
-                        margin={"dense"}
-                        {..._props}
-                    />
-                </MuiPickersUtilsProvider>
+                <TimePicker
+                    ampm={false}
+                    openTo="hours"
+                    views={["hours", "minutes", "seconds"]}
+                    format="HH:mm:ss"
+                    label={t(_label)}
+                    value={value}
+                    onChange={handleDateChange}
+                    margin={"dense"}
+                    {..._props}
+                />
             );
         case FieldType.DATETIME:
             return(
-                <MuiPickersUtilsProvider utils={MomentUtils}>
-                    <DateTimePicker
-                        format="YYYY/MM/DD hh:mm A"
-                        mask={[/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, ' ', /\d/, /\d/, ':', /\d/, /\d/, ' ', /a|p/i, 'M']}
-                        label={t(_label)}
-                        value={value}
-                        onChange={handleDateChange}
-                        disableOpenOnEnter
-                        margin={"dense"}
-                        {..._props}
-                    />
-                </MuiPickersUtilsProvider>
+                <DateTimePicker
+                    format="YYYY/MM/DD hh:mm A"
+                    mask={[/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, ' ', /\d/, /\d/, ':', /\d/, /\d/, ' ', /a|p/i, 'M']}
+                    label={t(_label)}
+                    value={value}
+                    onChange={handleDateChange}
+                    margin={"dense"}
+                    {..._props}
+                />
             );
         case FieldType.BODY1:
         default:

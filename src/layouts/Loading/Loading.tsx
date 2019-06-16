@@ -73,6 +73,7 @@ const style = (theme:Theme) => createStyles({
         width:'100vw',
         height:'100vh',
         overflow:'hidden',
+        color: theme.palette.getContrastText(theme.palette.background.default),
         backgroundColor: theme.palette.background.default,
         display: 'flex',
         flexDirection:'column',
@@ -106,7 +107,7 @@ export const LoadingBarComponent:React.FunctionComponent<{}> = (
     {}
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const [state,setState] = useState<ILoadingBarComponentState>({
         completed:0,
@@ -159,7 +160,7 @@ const LoadingComponent:React.FunctionComponent<IProps> = (
     }
 ) => {
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const { t, i18n } = useTranslation('landing', { useSuspense: false });
 

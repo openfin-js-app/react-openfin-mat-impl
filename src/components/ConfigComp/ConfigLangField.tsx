@@ -33,9 +33,9 @@ const ConfigLangField:React.FunctionComponent<{}> = (
         }
     } = useContext(ConfigContext);
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement | ((element: HTMLElement) => HTMLElement)>(null);
+    const [anchorEl, setAnchorEl] = useState<null | Element | ((element: Element) => Element)>(null);
 
     const getBtnContent = ()=>{
 
