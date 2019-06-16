@@ -87,8 +87,8 @@ describe('Dashboard layout',()=>{
         wrapper.find(Header).props().onClose();
         // snackbar events
         expect(wrapper.find(Snackbar)).toHaveLength(1);
-        wrapper.find(Snackbar).props().onClose();
-        wrapper.find(Snackbar).props().onExited();
+        // wrapper.find(Snackbar).props().onClose();
+        // wrapper.find(Snackbar).props().onExited();
 
     })
 
