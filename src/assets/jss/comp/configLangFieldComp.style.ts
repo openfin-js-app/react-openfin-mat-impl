@@ -11,7 +11,7 @@ const configLangFieldCompStyle = (theme:Theme)=> createStyles({
     },
     flagImg:{
         height:24,
-        marginRight: theme.spacing.unit*2
+        marginRight: theme.spacing(2),
     }
 });
 

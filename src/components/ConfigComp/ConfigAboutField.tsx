@@ -24,7 +24,7 @@ const ConfigAboutField:React.FunctionComponent<IProps> = (
     }
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const { t, i18n } = useTranslation('landing', { useSuspense: false });
 

@@ -1,3 +1,13 @@
+## [1.0.0] 2019-06-14
+- Update dependencies to 
+    - @material-ui/core @ ^4.0.2
+    - @material-ui/pickers @ 3.1.0"
+    - create-react-app @ 3.0.1
+    - classnames @ ^2.2.6
+    - chai @ ^4.2.0
+- Remove dependencies
+    - material-ui-pickers @ ^2.2.4
+- Refactor buildMuiTheme parameters
 ## [0.80.20] 2019-05-10
 - Depends up react-openfin@0.80.20 
 - Initially update README.md

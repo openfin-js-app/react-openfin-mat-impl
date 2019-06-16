@@ -39,7 +39,7 @@ const SidebarComp:React.FunctionComponent<IProps> = (
         open, routes, menuItems, color, image
     } = props;
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const { t, i18n } = useTranslation('menu', { useSuspense: false });
 

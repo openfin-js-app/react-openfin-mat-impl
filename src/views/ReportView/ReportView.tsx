@@ -16,7 +16,7 @@ const ReportView:React.FunctionComponent<{}> = (
     {}
 )=>{
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const {
         state:{

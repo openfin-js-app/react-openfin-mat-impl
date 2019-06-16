@@ -31,7 +31,7 @@ const ChildWindowLayout:React.FunctionComponent<IProps> = (
     }
 ) => {
 
-    const classes = useStyles();
+    const classes = useStyles({});
 
     const {
         state:{

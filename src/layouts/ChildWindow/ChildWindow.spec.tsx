@@ -78,8 +78,8 @@ describe('ChildWindow layout',()=>{
         wrapper.find(Header).props().onMaximize();
         wrapper.find(Header).props().onClose();
         expect(wrapper.find(Snackbar)).toHaveLength(1);
-        wrapper.find(Snackbar).props().onClose();
-        wrapper.find(Snackbar).props().onExited();
+        // wrapper.find(Snackbar).props().onClose();
+        // wrapper.find(Snackbar).props().onExited();
     })
 
     // it('render SnackbarContent and could be closed correctly',()=>{

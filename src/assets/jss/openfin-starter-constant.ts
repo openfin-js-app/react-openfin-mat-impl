@@ -31,7 +31,7 @@ const primaryColor = "#1e88e5";
 const warningColor = "#ff9800";
 const dangerColor = "#f44336";
 const successColor = "#4caf50";
-const infoColor = "#00acc1";
+const infoColor = "#33939f";
 const roseColor = "#e91e63";
 const greyColor = "#999999";
 

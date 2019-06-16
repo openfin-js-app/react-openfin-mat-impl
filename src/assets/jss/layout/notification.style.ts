@@ -16,8 +16,8 @@ const notificationStyle = (theme:Theme)=> createStyles({
     },
     closeBtn:{
         position:'absolute',
-        top : theme.spacing.unit/2,
-        right : theme.spacing.unit/2,
+        top : theme.spacing(0.5),
+        right : theme.spacing(0.5),
         zIndex:theme.zIndex.appBar+5,
 
     },

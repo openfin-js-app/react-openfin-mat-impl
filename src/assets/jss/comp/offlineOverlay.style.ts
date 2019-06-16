@@ -32,7 +32,7 @@ const offlineOverlayStyle = (theme:Theme)=> createStyles({
         justifyContent:'space-around',
     },
     button: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(1),
     },
 
 });
