@@ -1,3 +1,5 @@
+## [1.1.0] 2019-06-18
+- Support PUBLIC_URL field in config
 ## [1.0.1] 2019-06-16
 - Fix a bug: depends upon react-openfin@^1.0.1
 ## [1.0.0] 2019-06-16
