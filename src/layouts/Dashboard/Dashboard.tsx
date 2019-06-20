@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useContext } from 'react';
 import { ApplicationContext, ConfigContext, MuiTheme } from 'react-openfin';
+import {default as reactOpenfinInitState} from 'react-openfin/init';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import cx from 'classnames';
 
@@ -84,7 +85,7 @@ const DashbardLayout:React.FunctionComponent<IProps> = (
                 open={drawerOpen}
                 menuItems={menuItems}
                 color={"primary"}
-                image={sidebarBgUrl?sidebarBgUrl:'/img/sidebar-1.jpg'}
+                image={sidebarBgUrl?sidebarBgUrl:reactOpenfinInitState.config.publicUrl+'/img/sidebar-1.jpg'}
                 {...rest}
             />
             <div className={cx(
